@@ -1,11 +1,11 @@
 Summary:	An editor for the MateConf configuration system
 Name:		mate-conf-editor
-Version:	1.2.0
+Version:	1.4.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://mate-desktop.org
-Source0:	http://pub.mate-desktop.org/releases/1.2/%{name}-%{version}.tar.xz
+Source0:	http://pub.mate-desktop.org/releases/%{lua: print (string.match(rpm.expand("%{version}"),"%d+.%d+"))}/%{name}-%{version}.tar.xz
 
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	intltool
@@ -45,5 +45,10 @@ rm -rf %{buildroot}/var/lib/scrollkeeper
 %{_datadir}/mateconf-editor/icons/hicolor/*/*/*
 %{_iconsdir}/hicolor/*/*/*
 %{_mandir}/man1/*
-# mate help files
-%{_datadir}/mate/help
+
+
+%changelog
+* Wed Jun 06 2012 Matthew Dawkins <mattydaw@mandriva.org> 1.2.0-1
++ Revision: 802808
+- imported package mate-conf-editor
+
